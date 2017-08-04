@@ -1,31 +1,37 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.ozexpert.devicemeta" version="0.0.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-	<name>DeviceMeta</name>
-	<description>Some Device Meta Information for Cordova Apps</description>
-	<license>Apache 2.0</license>
+<plugin
+  id="com.ozexpert.devicemeta"
+  version="0.0.2"
+  xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<js-module name="DeviceMeta" src="www/DeviceMeta.js">
-		<clobbers target="cordova.plugins.DeviceMeta" />
-	</js-module>
+  <name>DeviceMeta</name>
+  <description>Some Device Meta Information for Cordova Apps</description>
+  <license>Apache 2.0</license>
+  <repo>https://github.com/ozexpert/cordova-plugin-device-meta.git</repo>
 
-	<platform name="android">
-		<config-file parent="/*" target="res/xml/config.xml">
-			<feature name="DeviceMeta">
-				<param name="android-package" value="com.ozexpert.devicemeta.DeviceMeta" />
-			</feature>
-		</config-file>
-		<config-file parent="/*" target="AndroidManifest.xml" />
+  <js-module name="DeviceMeta" src="www/DeviceMeta.js">
+    <clobbers target="DeviceMeta" />
+  </js-module>
 
-		<source-file src="src/android/DeviceMeta.java" target-dir="src/com/ozexpert/devicemeta/DeviceMeta" />
-		<source-file src="src/android/Utils.java" target-dir="src/com/ozexpert/devicemeta/Utils" />
-	</platform>
-	<platform name="ios">
-		<config-file parent="/*" target="config.xml">
-			<feature name="DeviceMeta">
-				<param name="ios-package" value="DeviceMeta" />
-			</feature>
-		</config-file>
-		<source-file src="src/ios/DeviceMeta.h" />
-		<source-file src="src/ios/DeviceMeta.m" />
-	</platform>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="DeviceMeta">
+        <param name="android-package" value="com.ozexpert.devicemeta.DeviceMeta" />
+      </feature>
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml" />
+    <source-file src="src/android/DeviceMeta.java" target-dir="src/com/ozexpert/devicemeta/DeviceMeta" />
+    <source-file src="src/android/Utils.java" target-dir="src/com/ozexpert/devicemeta/Utils" />
+  </platform>
+
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="DeviceMeta">
+        <param name="ios-package" value="DeviceMeta" />
+      </feature>
+    </config-file>
+    <source-file src="src/ios/DeviceMeta.h" />
+    <source-file src="src/ios/DeviceMeta.m" />
+  </platform>
 </plugin>
