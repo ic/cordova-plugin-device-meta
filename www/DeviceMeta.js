@@ -1,5 +1,10 @@
 var exec = require('cordova/exec');
 
-exports.getDeviceMeta = function(success, error) {
-    exec(success, error, "DeviceMeta", "getDeviceMeta", []);
+function DeviceMeta () {
+}
+
+DeviceMeta.prototype.getDeviceMeta = function(success, error) {
+  exec(success, error, "DeviceMeta", "getDeviceMeta", []);
 };
+
+module.exports = new DeviceMeta();
